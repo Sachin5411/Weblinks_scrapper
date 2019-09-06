@@ -56,18 +56,24 @@ links_list=new_finals+ social_list
 
 
 
+
+
 conn= mysql.connector.connect(host='localhost',user='root',passwd='atgworld')
+
 mycursor=conn.cursor()
+
 sql = 'CREATE DATABASE sachin'
-cursor.execute(sql)
+mycursor.execute(sql)
+use= "USE sachin"
+mycursor.execute(use)
 
-mycursor.execute("""DROP TABLE IF EXISTS links_tb2""")
-mycursor.execute("CREATE TABLE links_tb2(links VARCHAR(300))")
+mycursor.execute("""DROP TABLE IF EXISTS links_tb3""")
+mycursor.execute("CREATE TABLE links_tb3(links VARCHAR(300))")
 
 
 
 
-query = "INSERT INTO links_tb2 (links) VALUES (%s)"
+query = "INSERT INTO links_tb3 (links) VALUES (%s)"
 mycursor.executemany(query, [(list_item, ) for list_item in links_list])
 
 conn.commit()

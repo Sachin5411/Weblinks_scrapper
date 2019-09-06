@@ -56,7 +56,7 @@ links_list=new_finals+ social_list
 
 
 
-conn= mysql.connector.connect(host='localhost',user='root',passwd='atgworld',database = 'sachin')
+conn= mysql.connector.connect(host='localhost',user='root',passwd='atgworld',database = 'Sachin')
 mycursor=conn.cursor()
 
 mycursor.execute("""DROP TABLE IF EXISTS links_tb2""")

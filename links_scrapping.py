@@ -56,8 +56,10 @@ links_list=new_finals+ social_list
 
 
 
-conn= mysql.connector.connect(host='localhost',user='root',passwd='atgworld',database = 'Sachin')
+conn= mysql.connector.connect(host='localhost',user='root',passwd='atgworld')
 mycursor=conn.cursor()
+sql = 'CREATE DATABASE sachin'
+cursor.execute(sql)
 
 mycursor.execute("""DROP TABLE IF EXISTS links_tb2""")
 mycursor.execute("CREATE TABLE links_tb2(links VARCHAR(300))")
